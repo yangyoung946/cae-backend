@@ -36,7 +36,7 @@ public class UserDataController {
     }
 
     @CrossOrigin
-    @RequestMapping(value = "/consume_cpu", method = RequestMethod.POST)
+    @RequestMapping(value = "/consume_cpu", method = RequestMethod.GET)
     public Integer clientTest() {
         // 消耗CPU 的计算
         for (int i = 0; i <= 10; i++) {
