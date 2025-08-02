@@ -16,17 +16,7 @@ public class UserDataController {
     @CrossOrigin
     @RequestMapping(value = "/query", method = RequestMethod.GET)
     public UserDataVo getData(@RequestParam(value = "user_name") String userName) {
-        UserDataDo data = dataService.getData(userName);
-        if (data == null) {
-            data = new UserDataDo(userName);
-        }
-        data.setScanNum(data.getScanNum() + 1);
-        if (data.getScanNum() <= 1) {
-            dataService.insert(data.getUserName(), data.getScanNum());
-        } else {
-            dataService.updateTotal(data.getUserName(), data.getScanNum());
-        }
-        return new UserDataVo().setUserName(data.getUserName()).setScanNum(data.getScanNum());
+       return new UserDataVo("demo-test");
     }
 
     @CrossOrigin
