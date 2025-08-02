@@ -16,7 +16,7 @@ public class UserDataController {
     @CrossOrigin
     @RequestMapping(value = "/query", method = RequestMethod.GET)
     public UserDataVo getData(@RequestParam(value = "user_name") String userName) {
-       return new UserDataVo(123).setUserName("demo-test");
+       return new UserDataVo();
     }
 
     @CrossOrigin
